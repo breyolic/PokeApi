@@ -1,7 +1,7 @@
 <template>
   <a
     class="button"
-    :class="{ active: isActive }"
+    :class="{ 'button--active': isActive }"
     @click="$emit('my-button-click')"
   >
     <span class="button__prepend">
@@ -45,9 +45,9 @@ export default {
   &__body {
     padding-left: 1rem;
   }
-}
-.active {
-  background-color: var(--color-primary);
+  &--active {
+    background-color: var(--color-primary);
+  }
 }
 @media screen and (max-width: 720px) {
   .button {
