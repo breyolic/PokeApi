@@ -42,8 +42,6 @@ export default {
 
   --shadow-light: 0px 2px 10px rgba(0, 0, 0, 0.04);
   --shadow-top: 0px -5px 4px rgba(0, 0, 0, 0.05);
-
-  --border-box: 1px solid var(--color-border);
 }
 
 * {
@@ -70,6 +68,8 @@ body {
   color: var(--color-dark-2);
   background-color: var(--color-light-3);
   font-size: 1.8rem;
+  min-width: 375px;
+  margin: 0 auto;
 }
 
 #app {
@@ -93,11 +93,6 @@ body {
 /*
 * ESTILOS GLOBALES PARA COMPONENTES
 */
-
-.title {
-  color: var(--color-dark-1);
-}
-
 .row {
   display: flex;
   width: 100%;
@@ -105,31 +100,8 @@ body {
   flex-wrap: wrap;
 }
 
-// SIZES
-
-.fs-16 {
-  font-size: 1.6rem;
-}
-.fs-20 {
-  font-size: 2rem;
-}
-.fs-22 {
-  font-size: 2.2rem;
-}
-.fs-26 {
-  font-size: 2.6rem;
-}
-.fs-36 {
-  font-size: 3.6rem;
-}
-
-// WEIGHTS
-.fw-bold {
-  font-weight: 700;
-}
-
 /*
-* NAVEGACION
+* NAVIGATION
 */
 .fade-enter-active,
 .fade-leave-active {

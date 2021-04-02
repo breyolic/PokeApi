@@ -12,7 +12,6 @@
 <style lang="scss" scoped>
 .text-box {
   display: flex;
-  // width: 100%;
   margin-left: 3rem;
   margin-right: 3rem;
   padding-bottom: 1rem;

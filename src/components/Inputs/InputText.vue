@@ -1,5 +1,5 @@
 <template>
-  <div class="input-group" :style="{ width: width + 'px' }">
+  <div class="input-group" :style="{ width: width + '%' }">
     <input
       class="input-group__input"
       name="input"
@@ -40,16 +40,6 @@ export default {
       type: String,
       required: true,
     },
-    width: {
-      type: Number,
-      default: 100,
-      validator: (val) => {
-        return val > 0 && val <= 1200;
-      },
-    },
-    help: {
-      type: String,
-    },
   },
 };
 </script>
@@ -79,18 +69,13 @@ export default {
     border: none;
     box-shadow: var(--shadow-light);
 
+    &:focus {
+      outline: none;
+    }
+
     &::placeholder {
       color: var(--color-dark-3);
     }
   }
-}
-input:focus {
-  outline: none;
-}
-input:focus ~ label,
-input:valid ~ label {
-  top: -20px;
-  font-size: 14px;
-  color: var(--color-primary);
 }
 </style>

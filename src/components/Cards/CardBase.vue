@@ -127,11 +127,12 @@ export default {
 
   &__aside {
     height: 220px;
-    width: 315px;
+    width: 570px;
   }
 
   &__figure {
     background-image: url("../../assets/landscape.png");
+    background-position-y: center;
     height: 100%;
     background-size: cover;
     text-align: center;
@@ -142,7 +143,7 @@ export default {
   }
 
   &__body {
-    width: 315px;
+    width: 570px;
     background-color: var(--color-white);
     padding-top: 1rem;
   }
@@ -172,5 +173,15 @@ export default {
 }
 .star {
   color: var(--color-star) !important;
+}
+@media screen and (max-width: 720px) {
+  .card {
+    &__aside {
+      width: 315px;
+    }
+    &__body {
+      width: 315px;
+    }
+  }
 }
 </style>

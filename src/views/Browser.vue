@@ -2,7 +2,6 @@
   <div class="browser">
     <div class="row browser__input">
       <input-text
-        :width="315"
         :name="'Search'"
         v-model="searchValue"
         @my-keyup-enter="searchPokemon"
@@ -46,11 +45,7 @@
       </div>
     </div>
     <div class="row browser__footer">
-      <button-filled-icon
-        :width="150"
-        :isActive="buttonAll"
-        @my-button-click="seeAll"
-      >
+      <button-filled-icon :isActive="buttonAll" @my-button-click="seeAll">
         <template v-slot:icon>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +64,6 @@
         All
       </button-filled-icon>
       <button-filled-icon
-        :width="150"
         :isActive="buttonFavorites"
         @my-button-click="seeFavorites"
       >
@@ -198,6 +192,8 @@ export default {
   position: relative;
 
   &__input {
+    width: 570px;
+    margin: 0 auto;
     margin-top: 3.5rem;
   }
 
@@ -219,16 +215,17 @@ export default {
 
   &__results {
     margin-top: 4rem;
-    flex-direction: row;
-    // flex-wrap: nowrap;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: start;
     max-height: calc(100% - 205px);
     overflow-y: scroll;
+    scrollbar-width: none;
 
     &__item {
-      // flex: 1;
       margin-bottom: 1rem;
-      height: 60px;
-      width: 315px;
+      width: 570px;
       margin-left: 3rem;
       margin-right: 3rem;
       justify-content: space-between;
@@ -241,6 +238,9 @@ export default {
         color: var(--color-dark-1);
         font-size: 2.2rem;
         cursor: pointer;
+        height: 60px;
+        display: flex;
+        align-items: center;
       }
       &__fav {
         background-color: var(--color-light-2);
@@ -283,5 +283,19 @@ export default {
 }
 .star {
   color: var(--color-star) !important;
+}
+
+@media screen and (max-width: 720px) {
+  .browser {
+    &__input {
+      width: 315px;
+    }
+
+    &__results {
+      &__item {
+        width: 315px;
+      }
+    }
+  }
 }
 </style>

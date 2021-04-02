@@ -67,12 +67,19 @@ export default {
   }
 
   &__copy {
-    width: 315px;
+    width: 570px;
     text-align: center;
   }
 
   &__footer {
     margin-top: 5rem;
+  }
+}
+@media screen and (max-width: 720px) {
+  .home {
+    &__copy {
+      width: 150px;
+    }
   }
 }
 </style>

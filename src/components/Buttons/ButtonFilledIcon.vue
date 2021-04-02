@@ -1,7 +1,6 @@
 <template>
   <a
     class="button"
-    :style="{ width: width + 'px' }"
     :class="{ active: isActive }"
     @click="$emit('my-button-click')"
   >
@@ -16,13 +15,6 @@
 <script>
 export default {
   props: {
-    width: {
-      type: Number,
-      default: 100,
-      validator: (val) => {
-        return val > 0 && val <= 1200;
-      },
-    },
     isActive: {
       type: Boolean,
       default: false,
@@ -42,6 +34,7 @@ export default {
   background-color: var(--color-dark-3);
   border-radius: 60px;
   height: 44px;
+  width: 275px;
 
   &__prepend {
     display: flex;
@@ -54,5 +47,10 @@ export default {
 }
 .active {
   background-color: var(--color-primary);
+}
+@media screen and (max-width: 720px) {
+  .button {
+    width: 150px;
+  }
 }
 </style>
