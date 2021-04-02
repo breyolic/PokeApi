@@ -23,6 +23,7 @@
   &__value {
     font-weight: 500;
     padding-left: 0.5rem;
+    text-transform: capitalize;
   }
 }
 </style>

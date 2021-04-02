@@ -35,6 +35,7 @@ export default {
   border-radius: 60px;
   height: 44px;
   width: 275px;
+  cursor: pointer;
 
   &__prepend {
     display: flex;

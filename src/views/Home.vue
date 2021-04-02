@@ -78,7 +78,7 @@ export default {
 @media screen and (max-width: 720px) {
   .home {
     &__copy {
-      width: 150px;
+      width: 315px;
     }
   }
 }
