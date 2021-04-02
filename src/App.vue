@@ -3,8 +3,26 @@
     <transition name="fade" mode="out-in">
       <router-view class="scrollable"></router-view>
     </transition>
+    <div v-if="getLoading">
+      <loader-base></loader-base>
+    </div>
   </div>
 </template>
+<script>
+import LoaderBase from "@/components/Loaders/LoaderBase";
+import { mapGetters, mapActions } from "vuex";
+export default {
+  components: {
+    LoaderBase: LoaderBase,
+  },
+  computed: {
+    ...mapGetters("shared", ["getLoading"]),
+  },
+  methods: {
+    ...mapActions("shared", ["unsetLoading"]),
+  },
+};
+</script>
 
 <style lang="scss">
 :root {
@@ -22,8 +40,8 @@
   --color-dark-2: #5e5e5e; //text
   --color-dark-3: #bfbfbf; //button-disabled
 
-  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
-  --shadow-light: 0 4px 4px rgba(0, 0, 0, 0.16);
+  --shadow-light: 0px 2px 10px rgba(0, 0, 0, 0.04);
+  --shadow-top: 0px -5px 4px rgba(0, 0, 0, 0.05);
 
   --border-box: 1px solid var(--color-border);
 }
@@ -46,8 +64,8 @@ html {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
   line-height: 1.6;
   color: var(--color-dark-2);
   background-color: var(--color-light-3);
@@ -80,17 +98,34 @@ body {
   color: var(--color-dark-1);
 }
 
-.fs-10 {
-  font-size: 1rem;
+.row {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
-.fs-12 {
-  font-size: 1.2rem;
-}
-.fs-14 {
-  font-size: 1.4rem;
-}
+
+// SIZES
+
 .fs-16 {
   font-size: 1.6rem;
+}
+.fs-20 {
+  font-size: 2rem;
+}
+.fs-22 {
+  font-size: 2.2rem;
+}
+.fs-26 {
+  font-size: 2.6rem;
+}
+.fs-36 {
+  font-size: 3.6rem;
+}
+
+// WEIGHTS
+.fw-bold {
+  font-weight: 700;
 }
 
 /*
