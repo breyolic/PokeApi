@@ -1,5 +1,5 @@
 <template>
-  <div class="input-group" :style="{ width: width + '%' }">
+  <div class="input-group">
     <input
       class="input-group__input"
       name="input"
